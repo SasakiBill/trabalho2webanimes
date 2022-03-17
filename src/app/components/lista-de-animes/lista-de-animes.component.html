@@ -1,0 +1,35 @@
+<div class="bg-image"></div>
+
+<div class="bg-text">
+    <h1>Meu Repositório de Animes</h1>
+    <button (click)="irParaCriarAnime()">Adicionar Anime!</button>
+    <table>
+        <tr>
+            <th>Nome </th>
+            <th>Gênero </th>
+            <th>Estúdio </th>
+            <th>Ano de Lançamento </th>
+            <th>Número de Episódios </th>
+            <th>Plataforma de Transmissão</th>
+            <th>Descrição </th>
+            <th>Classificação </th>
+            <th>Operação </th>
+        </tr>
+        <tr *ngFor="let anime of lista_animes; let i = index">
+            <td>{{ anime.getName() }}</td>
+            <td>{{ anime.getGender() }}</td>
+            <td>{{ anime.getStudio() }}</td>
+            <td>{{ anime.getLaunchDate() }}</td>
+            <td>{{ anime.getNumberEpisodes() }}</td>
+            <td>{{ anime.getStreamingPlatform() }}</td>
+            <td>{{ anime.getDescription() }}</td>
+            <td>{{ anime.getClassification() }}</td>
+            <td>
+                <button (click) = "excluir(i)">Excluir</button>
+                <button (click) = "editar(i)">Editar</button>
+            </td>
+        </tr>
+
+    </table>
+
+</div>
